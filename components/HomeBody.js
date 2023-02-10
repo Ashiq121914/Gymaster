@@ -1,11 +1,11 @@
+import Link from 'next/link';
 import React from 'react';
+import HomeNav from './HomeNav';
 
 const HomeBody = () => {
     return (
-        <div>
-              <h1 className="text-3xl font-bold underline btn btn-dark">
-      Hello world!
-    </h1>
+        <div className='h-[100vh]'>
+        <HomeNav ></HomeNav>
         </div>
     );
 };
