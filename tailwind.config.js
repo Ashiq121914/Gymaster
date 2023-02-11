@@ -10,19 +10,10 @@ module.exports = {
   ],
   theme: {
     extend: {},
-    screens: {
-      mobile: "280px",
-      
-      md: "768px",
-      lg: "1280px",
-      
-
-      
-      
-    },
+    
   },
   plugins: [require("daisyui")],
-  };
+  }
   
   
 
