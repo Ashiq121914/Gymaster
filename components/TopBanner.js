@@ -1,9 +1,11 @@
 import Link from "next/link";
-import React from "react";
+import React, { useContext } from "react";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
+import { AuthContext } from "./AuthProvider/AuthProvider";
 
 const TopBanner = () => {
+  
   return (
     <div className="grid xl:grid-cols-3 grid-cols-1 xl:gap-0 gap-2  bg-[#3E084C] text-white xl:px-[80px] py-[13px]">
       <div className="flex gap-2 xl:justify-start justify-center">
@@ -28,7 +30,7 @@ const TopBanner = () => {
         <Link href="/login" className="mr-[16px]">
           লগ ইন
         </Link>
-        <Link href="/register">রেজিস্টার</Link>
+        <Link href="/signup">রেজিস্টার</Link>
       </div>
     </div>
   );
