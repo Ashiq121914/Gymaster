@@ -28,7 +28,7 @@ const MidSearchNav = () => {
         <FiUser />
         <div className="flex justify-center items-center">
           <FiShoppingCart></FiShoppingCart>
-          <span class="rounded-full mb-[15px] bg-[#3E084C] text-white w-[20px] h-[20px] flex justify-center text-[13px]">
+          <span className="rounded-full mb-[15px] bg-[#3E084C] text-white w-[20px] h-[20px] flex justify-center text-[13px]">
             2
           </span>
         </div>

@@ -12,15 +12,17 @@ const UsersData = () => {
     <div className="max-w-[900px] mx-auto p-4 my-[90px]">
       <h2 className="text-[42px] mb-[40px]">User List</h2>
       <table className="table  border-l-0 border-r-0 w-full h-full ">
-        <tr className="text-black/50 text-[14px] ">
-          <th className="pl-0 font-normal">First Name</th>
-          <th className="pl-0 font-normal">Last name</th>
-          <th className="pl-0 font-normal">Email</th>
-          <th className="pl-0 font-normal">Password</th>
-        </tr>
+        <thead>
+          <tr className="text-black/50 text-[14px] ">
+            <th className="pl-0 font-normal">First Name</th>
+            <th className="pl-0 font-normal">Last name</th>
+            <th className="pl-0 font-normal">Email</th>
+            <th className="pl-0 font-normal">Password</th>
+          </tr>
+        </thead>
 
         <tbody>
-          {users.map((user) => (
+          {users.map((user, index) => (
             <>
               {
                 <tr key={user._id} className="">
