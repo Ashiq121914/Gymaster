@@ -1,19 +1,18 @@
-import Link from "next/link";
+
 import React from "react";
 
 import HomeCategory from "./HomeCategory";
-import HomeNav from "./HomeNav";
+
 import HomeSlider from "./HomeSlider";
-
-import { blogs } from "@/components/BlogData";
 import Blogs from "./Blogs";
+import NavbarHome from "./NavbarHome";
 
 
-const HomeBody = () => {
-    console.log(blogs)
+const Home = () => {
+    
   return (
     <div className="h-full">
-      <HomeNav></HomeNav>
+      <NavbarHome></NavbarHome>
       <HomeSlider></HomeSlider>
       <HomeCategory></HomeCategory>
       <Blogs></Blogs>
@@ -22,4 +21,4 @@ const HomeBody = () => {
   );
 };
 
-export default HomeBody;
+export default Home;

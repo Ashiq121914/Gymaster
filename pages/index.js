@@ -1,13 +1,10 @@
 import Head from 'next/head'
 
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
-
-import HomeBody from '@/components/HomeBody'
+import Home from '../components/Home';
 
 
 
-export default function Home() {
+export default function index() {
   return (
     <>
       <Head>
@@ -17,7 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
-        <HomeBody></HomeBody>
+        <Home></Home>
       
     </>
   )

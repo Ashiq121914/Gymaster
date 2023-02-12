@@ -3,7 +3,7 @@ import React, {  useState } from "react";
 
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 
-function Navbar(props) {
+function NavbarHome() {
   const [nav, setNav] = useState(false);
 
 
@@ -111,4 +111,4 @@ function Navbar(props) {
   );
 }
 
-export default Navbar;
+export default NavbarHome;

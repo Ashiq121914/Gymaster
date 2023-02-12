@@ -8,6 +8,26 @@ import InstagramImg from "./InstagramImg";
 import Link from "next/link";
 
 function HomeCategory() {
+  const datas = [
+    {
+      socialImg:IgImg1,
+      id:1,
+      name:"জিমের সরঞ্জাম"
+
+    },
+    {
+      socialImg:IgImg2,
+      id:2,
+      name:"জিমের পোশাক"
+
+    },
+    {
+      socialImg:IgImg3,
+      id:3,
+      name:"সাপ্লিমেন্টস"
+
+    },
+  ]
   return (
     <div className="max-w-[1240px] mx-auto py-24">
       <div className="flex justify-between">
@@ -20,9 +40,11 @@ function HomeCategory() {
       </Link>
       </div>
       <div className="grid grid-cols-3 gap-2 py-4">
-        <InstagramImg socialImg={IgImg1} name="জিমের সরঞ্জাম"/>
-        <InstagramImg socialImg={IgImg2} name="জিমের পোশাক"/>
-        <InstagramImg socialImg={IgImg3} name="সাপ্লিমেন্টস"/>
+        {
+          datas.map( (data)=>{
+           return <InstagramImg key={data.id} data={data}></InstagramImg>
+          })
+        }
 
       </div>
     </div>

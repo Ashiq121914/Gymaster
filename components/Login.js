@@ -58,7 +58,7 @@ const Login = () => {
 
     setErrors(newErrors);
 
-    return Object.values(newErrors).every((error) => error === "");
+
   };
 
   const handleSubmit = (e) => {
