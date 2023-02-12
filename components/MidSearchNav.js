@@ -3,12 +3,16 @@ import React from "react";
 import logo from "../assets/navLogo.png";
 
 import { FiSearch, FiUser, FiShoppingCart } from "react-icons/fi";
+import Link from "next/link";
 
 const MidSearchNav = () => {
   return (
     <div className="grid grid-cols-4  p-3 xl:gap-0 gap-4">
       <div className="flex justify-center items-center xl:col-span-1 col-span-4">
+        <Link className="cursor-pointer" href="/">
+
         <Image src={logo} width={231} height={72} alt="logo" />
+        </Link>
       </div>
       <div className="flex items-center justify-center xl:col-span-2 col-span-4 w-full">
         <input

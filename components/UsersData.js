@@ -29,7 +29,7 @@ const UsersData = () => {
     {
       users.map(user=><>
       {
-         <tr className=''>
+         <tr key={user._id} className=''>
           <td className='border-y-2 border-black/30 pl-0'>{user.firstname}</td>
           <td className='border-y-2 border-black/30 pl-0'>{user.lastname}</td>
           <td className='border-y-2 border-black/30 pl-0'>{user.email}</td>

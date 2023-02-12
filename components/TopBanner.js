@@ -5,7 +5,12 @@ import { FiMail } from "react-icons/fi";
 import { AuthContext } from "./AuthProvider/AuthProvider";
 
 const TopBanner = () => {
-  
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((err) => console.log(err));
+  };
   return (
     <div className="grid xl:grid-cols-3 grid-cols-1 xl:gap-0 gap-2  bg-[#3E084C] text-white xl:px-[80px] py-[13px]">
       <div className="flex gap-2 xl:justify-start justify-center">
@@ -26,12 +31,23 @@ const TopBanner = () => {
           </button>
         </Link>
       </div>
-      <div className="flex items-center gap-2 xl:justify-end justify-center xl:text-[16px] text-[12px]">
-        <Link href="/login" className="mr-[16px]">
-          লগ ইন
-        </Link>
-        <Link href="/signup">রেজিস্টার</Link>
-      </div>
+      {user?.email ? (
+        <>
+          <button
+            onClick={handleLogOut}
+            className="flex items-center gap-2 xl:justify-end justify-center xl:text-[16px] text-[12px]"
+          >
+            লগ আউট
+          </button>
+        </>
+      ) : (
+        <div className="flex items-center gap-2 xl:justify-end justify-center xl:text-[16px] text-[12px]">
+          <Link href="/login" className="mr-[16px]">
+            লগ ইন
+          </Link>
+          <Link href="/signup">রেজিস্টার</Link>
+        </div>
+      )}
     </div>
   );
 };

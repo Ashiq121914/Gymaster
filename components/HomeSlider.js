@@ -51,7 +51,7 @@ const HomeSlider = () => {
         <div className="absolute top-0 left-0 right-0 bottom-0 bg-white/30 " />
         <Image
           src={items[activeIndex].image}
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover"
           alt=""
           width={1440}
           height={538}

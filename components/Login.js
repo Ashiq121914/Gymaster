@@ -2,6 +2,7 @@ import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useContext, useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
 import { AuthContext } from "./AuthProvider/AuthProvider";
 
 const Login = () => {
@@ -10,13 +11,7 @@ const Login = () => {
     password: "",
   });
   const [admin, setAdmin] = useState([]);
-console.log(admin.role)
-  useEffect(() => {
-    fetch(`http://localhost:3001/user/allusers/${formData.email}`)
-    .then(res=>res.json())
-    .then(data=>setAdmin(data))
-  }, [formData.email]);
-  // signup
+  console.log(admin.role)
   const router = useRouter();
   const { SignIn } = useContext(AuthContext);
 
@@ -24,6 +19,16 @@ console.log(admin.role)
     email: "",
     password: "",
   });
+
+  useEffect(() => {
+    fetch(`http://localhost:3001/user/allusers/${formData.email}`)
+    .then(res=>{
+        return res.text()
+    })
+    .then(data=>setAdmin(data))
+  }, [formData.email]);
+  // signup
+
 
   const handleInputChange = (e) => {
     setFormData({
@@ -64,9 +69,9 @@ console.log(admin.role)
     SignIn(formData.email, formData.password)
       .then((result) => {
         const user = result.user;
-        alert("successfully login");
+        toast.success("Successfully login");
         
-        if (admin) {
+        if (admin.role !== "user") {
           router.push("/usersdata");
         } else {
           router.push("/");
