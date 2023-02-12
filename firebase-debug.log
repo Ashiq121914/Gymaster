@@ -1,0 +1,22 @@
+[debug] [2023-02-12T03:44:35.195Z] ----------------------------------------------------------------------
+[debug] [2023-02-12T03:44:35.197Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ASUS\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-02-12T03:44:35.197Z] CLI Version:   11.14.4
+[debug] [2023-02-12T03:44:35.197Z] Platform:      win32
+[debug] [2023-02-12T03:44:35.197Z] Node Version:  v16.15.1
+[debug] [2023-02-12T03:44:35.203Z] Time:          Sun Feb 12 2023 09:44:35 GMT+0600 (Bangladesh Standard Time)
+[debug] [2023-02-12T03:44:35.203Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-02-12T03:44:35.206Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-02-12T03:44:35.223Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-02-12T03:44:35.224Z] > authorizing via signed-in user (170201008gaziashiq@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  F:\genesys\gymaster-client-side
+

@@ -11,7 +11,7 @@ const Login = () => {
     password: "",
   });
   const [admin, setAdmin] = useState([]);
-  console.log(admin.role)
+  console.log(admin.role);
   const router = useRouter();
   const { SignIn } = useContext(AuthContext);
 
@@ -21,14 +21,15 @@ const Login = () => {
   });
 
   useEffect(() => {
-    fetch(`http://localhost:3001/user/allusers/${formData.email}`)
-    .then(res=>{
-        return res.text()
-    })
-    .then(data=>setAdmin(data))
+    fetch(
+      `https://gymaster-server-side.vercel.app/user/allusers/${formData.email}`
+    )
+      .then((res) => {
+        return res.text();
+      })
+      .then((data) => setAdmin(data));
   }, [formData.email]);
   // signup
-
 
   const handleInputChange = (e) => {
     setFormData({
@@ -70,7 +71,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         toast.success("Successfully login");
-        
+
         if (admin.role !== "user") {
           router.push("/usersdata");
         } else {
@@ -81,53 +82,49 @@ const Login = () => {
         setErrors(error.message);
       });
   };
-  
 
   return (
     <div className="max-w-[800px] mx-auto my-[96px]">
-      <form
-        className="bg-white p-6  "
-        onSubmit={handleSubmit}
-      >
+      <form className="bg-white p-6  " onSubmit={handleSubmit}>
         <h2 className="text-[42px]  ">Login</h2>
         <div className="grid grid-cols-1 xl:grid-cols-2 justify-between gap-4 mt-[40px]">
-        <div className="mb-4 ">
-          
-          <input
-            className={`w-full border border-black/20 py-[15px] pl-[15px]   ${
-              errors.email && "border-red-500"
-            }`}
-            id="email"
-            type="email"
-            name="email"
-            placeholder="Enter your email address"
-            value={formData.email}
-            onChange={handleInputChange}
-          />
-          {errors.email && (
-            <p className="text-red-500 text-xs  mt-2">{errors.email}</p>
-          )}
-        </div>
-        <div className="mb-4 w-full">
-          
-          <input
-            className={`w-full border border-black/20 py-[15px] px-[15px] mb-[8px]  ${
-              errors.password && "border-red-500"
-            }`}
-            id="password"
-            type="password"
-            name="password"
-            placeholder="Enter your password"
-            value={formData.password}
-            onChange={handleInputChange}
-          />
-          {errors.password && (
-            <p className="text-red-500 text-xs italic mt-2">
-              {errors.password}
-            </p>
-          )}
-          <Link className="text-[14px] " href="/reset">Forgot Password</Link>
-        </div>
+          <div className="mb-4 ">
+            <input
+              className={`w-full border border-black/20 py-[15px] pl-[15px]   ${
+                errors.email && "border-red-500"
+              }`}
+              id="email"
+              type="email"
+              name="email"
+              placeholder="Enter your email address"
+              value={formData.email}
+              onChange={handleInputChange}
+            />
+            {errors.email && (
+              <p className="text-red-500 text-xs  mt-2">{errors.email}</p>
+            )}
+          </div>
+          <div className="mb-4 w-full">
+            <input
+              className={`w-full border border-black/20 py-[15px] px-[15px] mb-[8px]  ${
+                errors.password && "border-red-500"
+              }`}
+              id="password"
+              type="password"
+              name="password"
+              placeholder="Enter your password"
+              value={formData.password}
+              onChange={handleInputChange}
+            />
+            {errors.password && (
+              <p className="text-red-500 text-xs italic mt-2">
+                {errors.password}
+              </p>
+            )}
+            <Link className="text-[14px] " href="/reset">
+              Forgot Password
+            </Link>
+          </div>
         </div>
         <button
           className=" border border-black px-[55px] py-[12px] hover:bg-black hover:text-white text-black  text-[14px] font-semibold"
@@ -135,7 +132,9 @@ const Login = () => {
         >
           Sign In
         </button>
-        <Link className="text-[14px] mt-[8px] block font-normal" href="/signup">Create Account</Link>
+        <Link className="text-[14px] mt-[8px] block font-normal" href="/signup">
+          Create Account
+        </Link>
       </form>
     </div>
   );

@@ -25,7 +25,7 @@ const SignUp = () => {
     SignUp(email, password)
       .then((result) => {
         const user = result.user;
-        fetch("http://localhost:3001/user/register", {
+        fetch("https://gymaster-server-side.vercel.app/user/register", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -54,44 +54,40 @@ const SignUp = () => {
         <div className="">
           <form onSubmit={handleRegister} className=" ">
             <div className=" grid grid-cols-1 xl:grid-cols-2 gap-8">
-            <div >
-              
-              <input
-                placeholder="First Name"
-                name="firstname"
-                className="w-full border border-black/20 py-[15px] pl-[15px]"
-                type="text"
-              />
+              <div>
+                <input
+                  placeholder="First Name"
+                  name="firstname"
+                  className="w-full border border-black/20 py-[15px] pl-[15px]"
+                  type="text"
+                />
+              </div>
+              <div className="">
+                <input
+                  placeholder="Last name"
+                  name="lastname"
+                  className="w-full border border-black/20 py-[15px] pl-[15px]"
+                  type="text"
+                />
+              </div>
+              <div className="">
+                <input
+                  placeholder="Email"
+                  name="email"
+                  className="w-full border border-black/20 py-[15px] pl-[15px]"
+                  type="text"
+                />
+              </div>
+              <div className="">
+                <input
+                  name="password"
+                  placeholder="Password"
+                  className="w-full border border-black/20 py-[15px] pl-[15px]"
+                  type="password"
+                />
+              </div>
             </div>
-            <div className="">
-              
-              <input
-                placeholder="Last name"
-                name="lastname"
-                className="w-full border border-black/20 py-[15px] pl-[15px]"
-                type="text"
-              />
-            </div>
-            <div className="">
-              
-              <input
-                placeholder="Email"
-                name="email"
-                className="w-full border border-black/20 py-[15px] pl-[15px]"
-                type="text"
-              />
-            </div>
-            <div className="">
-              
-              <input
-                name="password"
-                placeholder="Password"
-                className="w-full border border-black/20 py-[15px] pl-[15px]"
-                type="password"
-              />
-            </div>
-            </div>
-            
+
             <div className="mt-[40px]">
               <button
                 type="submit"
@@ -99,9 +95,10 @@ const SignUp = () => {
               >
                 Sign Up
               </button>
-              
             </div>
-            <Link href="/" className="text-[14px] mt-[8px] block font-normal" >Cancel</Link>
+            <Link href="/" className="text-[14px] mt-[8px] block font-normal">
+              Cancel
+            </Link>
           </form>
         </div>
       </div>
