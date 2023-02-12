@@ -65,7 +65,7 @@ console.log(admin.role)
       .then((result) => {
         const user = result.user;
         alert("successfully login");
-        console.log(admin.role)
+        
         if (admin) {
           router.push("/usersdata");
         } else {
@@ -76,44 +76,43 @@ console.log(admin.role)
         setErrors(error.message);
       });
   };
-  console.log(formData);
+  
 
   return (
-    <div className="container mx-auto">
+    <div className="max-w-[800px] mx-auto my-[96px]">
       <form
-        className="bg-white p-6 rounded-lg shadow-md"
+        className="bg-white p-6  "
         onSubmit={handleSubmit}
       >
-        <h2 className="text-lg font-medium mb-4">Login</h2>
-        <div className="mb-4">
-          <label className="block mb-2 font-medium text-sm" htmlFor="email">
-            Email
-          </label>
+        <h2 className="text-[42px]  ">Login</h2>
+        <div className="grid grid-cols-1 xl:grid-cols-2 justify-between gap-4 mt-[40px]">
+        <div className="mb-4 ">
+          
           <input
-            className={`w-full border border-gray-400 p-2 rounded-lg ${
+            className={`w-full border border-black/20 py-[15px] pl-[15px]   ${
               errors.email && "border-red-500"
             }`}
             id="email"
             type="email"
             name="email"
+            placeholder="Enter your email address"
             value={formData.email}
             onChange={handleInputChange}
           />
           {errors.email && (
-            <p className="text-red-500 text-xs italic mt-2">{errors.email}</p>
+            <p className="text-red-500 text-xs  mt-2">{errors.email}</p>
           )}
         </div>
-        <div className="mb-4">
-          <label className="block mb-2 font-medium text-sm" htmlFor="password">
-            Password
-          </label>
+        <div className="mb-4 w-full">
+          
           <input
-            className={`w-full border border-gray-400 p-2 rounded-lg ${
+            className={`w-full border border-black/20 py-[15px] px-[15px] mb-[8px]  ${
               errors.password && "border-red-500"
             }`}
             id="password"
             type="password"
             name="password"
+            placeholder="Enter your password"
             value={formData.password}
             onChange={handleInputChange}
           />
@@ -122,14 +121,16 @@ console.log(admin.role)
               {errors.password}
             </p>
           )}
-          <Link href="/reset">Forgot Password</Link>
+          <Link className="text-[14px] " href="/reset">Forgot Password</Link>
+        </div>
         </div>
         <button
-          className="w-full bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 rounded-lg"
+          className=" border border-black px-[55px] py-[12px] hover:bg-black hover:text-white text-black  text-[14px] font-semibold"
           type="submit"
         >
-          Login
+          Sign In
         </button>
+        <Link className="text-[14px] mt-[8px] block font-normal" href="/signup">Create Account</Link>
       </form>
     </div>
   );
